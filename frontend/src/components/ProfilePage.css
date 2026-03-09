@@ -1,0 +1,77 @@
+.profile-page { flex: 1; height: 100vh; overflow-y: auto; background: var(--bg-primary); }
+
+.profile-header { display: flex; gap: 40px; padding: 32px 40px 24px; max-width: 900px; margin: 0 auto; }
+
+.profile-avatar-section { flex-shrink: 0; }
+.profile-avatar-wrap { position: relative; width: 90px; height: 90px; }
+.profile-avatar { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; position: relative; z-index: 1; border: 3px solid var(--bg-primary); }
+.profile-avatar-ring { position: absolute; inset: -3px; border-radius: 50%; background: var(--gradient); z-index: 0; }
+
+.profile-info { flex: 1; }
+.profile-top-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.profile-username { font-size: 22px; font-weight: 400; }
+.profile-edit-btn { padding: 7px 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; color: var(--text-primary); transition: background 0.2s; }
+.profile-edit-btn:hover { background: var(--bg-hover); }
+.profile-settings-btn { font-size: 22px; background: none; border: none; cursor: pointer; }
+
+.profile-stats { display: flex; gap: 32px; margin-bottom: 16px; }
+.profile-stat { display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; }
+.stat-num { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+.stat-label { font-size: 13px; color: var(--text-secondary); }
+
+.profile-bio { display: flex; flex-direction: column; gap: 4px; }
+.profile-bio strong { font-size: 14px; font-weight: 700; }
+.profile-bio p { font-size: 14px; color: var(--text-secondary); }
+.profile-link { font-size: 13px; color: var(--accent-blue); font-weight: 600; }
+
+.profile-highlights { display: flex; gap: 20px; padding: 16px 40px; max-width: 900px; margin: 0 auto; overflow-x: auto; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); scrollbar-width: none; }
+.profile-highlights::-webkit-scrollbar { display: none; }
+
+.highlight-item { display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; flex-shrink: 0; }
+.highlight-circle { width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--border); overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); }
+.highlight-circle img { width: 100%; height: 100%; object-fit: cover; }
+.highlight-plus { font-size: 24px; color: var(--text-muted); }
+.highlight-label { font-size: 12px; color: var(--text-secondary); }
+
+.profile-tabs { display: flex; border-top: 1px solid var(--border); max-width: 900px; margin: 0 auto; }
+.profile-tab { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 14px; font-size: 13px; font-weight: 600; color: var(--text-muted); border-top: 2px solid transparent; transition: all 0.2s; }
+.profile-tab:hover { color: var(--text-primary); }
+.profile-tab.active { color: var(--text-primary); border-top-color: var(--text-primary); }
+
+.profile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; max-width: 900px; margin: 0 auto; padding-bottom: 40px; }
+.profile-grid-item { position: relative; aspect-ratio: 1; overflow: hidden; cursor: pointer; background: var(--bg-secondary); }
+.profile-grid-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.profile-grid-item:hover img { transform: scale(1.05); }
+.profile-grid-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; gap: 20px; color: white; font-size: 15px; font-weight: 700; opacity: 0; transition: opacity 0.2s; }
+.profile-grid-item:hover .profile-grid-overlay { opacity: 1; }
+
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 1000; display: flex; align-items: center; justify-content: center; animation: fadeIn 0.2s ease; }
+
+.edit-modal { background: var(--bg-card); border-radius: var(--radius); width: 90%; max-width: 480px; overflow: hidden; animation: popIn 0.2s ease; }
+.edit-modal-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.edit-modal-header h3 { font-size: 16px; font-weight: 700; }
+.edit-modal-header button { font-size: 18px; color: var(--text-muted); }
+
+.edit-avatar-section { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 20px; }
+.edit-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+.edit-avatar-btn { color: var(--accent-blue); font-size: 14px; font-weight: 600; }
+
+.edit-form { padding: 0 20px; display: flex; flex-direction: column; gap: 16px; }
+.edit-field { display: flex; flex-direction: column; gap: 6px; }
+.edit-field label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+.edit-input { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; color: var(--text-primary); font-size: 14px; font-family: var(--font-body); outline: none; resize: none; transition: border-color 0.2s; }
+.edit-input:focus { border-color: var(--accent); }
+
+.edit-actions { display: flex; justify-content: flex-end; gap: 10px; padding: 20px; border-top: 1px solid var(--border); margin-top: 16px; }
+.edit-cancel-btn { padding: 9px 20px; border-radius: var(--radius-sm); background: var(--bg-secondary); border: 1px solid var(--border); color: var(--text-primary); font-size: 14px; font-weight: 600; }
+.edit-save-btn { padding: 9px 20px; border-radius: var(--radius-sm); background: var(--accent); color: white; font-size: 14px; font-weight: 600; }
+
+.post-modal { background: var(--bg-card); border-radius: var(--radius); display: flex; overflow: hidden; max-width: 800px; width: 90%; animation: popIn 0.2s ease; }
+.post-modal-img { width: 500px; max-height: 600px; object-fit: cover; }
+.post-modal-info { flex: 1; display: flex; flex-direction: column; padding: 20px; }
+.post-modal-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.post-modal-avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.post-modal-username { flex: 1; font-weight: 600; font-size: 14px; }
+.post-modal-close { font-size: 18px; color: var(--text-muted); }
+.post-modal-actions { display: flex; gap: 16px; }
+.post-modal-actions button { font-size: 14px; font-weight: 600; color: var(--text-secondary); }
