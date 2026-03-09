@@ -1,0 +1,7 @@
+.feed-scroll-container { flex: 1; height: 100vh; overflow-y: auto; overflow-x: hidden; position: relative; }
+.feed-sizer { position: relative; width: 100%; min-height: 100vh; }
+.feed-item-wrapper { padding: 0 20px; max-width: 640px; margin: 0 auto; left: 0; right: 0; }
+.feed-loading-top { display: flex; justify-content: center; padding: 16px; position: sticky; top: 0; z-index: 10; background: linear-gradient(to bottom, var(--bg-primary) 60%, transparent); }
+.feed-loading-bottom { display: flex; justify-content: center; padding: 24px; }
+.feed-spinner { width: 28px; height: 28px; border: 2px solid var(--border-light); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s linear infinite; }
+.feed-loading-initial { padding: 20px; max-width: 600px; margin: 0 auto; }
